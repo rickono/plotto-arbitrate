@@ -128,11 +128,9 @@ pub fn compare_hands(hand1: u64, hand2: u64) -> Ordering {
     }
 
     // high card
-    let hand1_high_rank =
-        Rank::try_from(15u8 - extract_ranks(hand1).leading_zeros() as u8).expect("Invalid rank");
-    let hand2_high_rank =
-        Rank::try_from(15u8 - extract_ranks(hand2).leading_zeros() as u8).expect("Invalid rank");
-    hand1_high_rank.cmp(&hand2_high_rank)
+    let hand1_ranks = extract_ranks(hand1);
+    let hand2_ranks = extract_ranks(hand2);
+    hand1_ranks.cmp(&hand2_ranks)
 }
 
 pub fn straight(hand: u64) -> Option<Rank> {
