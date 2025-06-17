@@ -1,0 +1,14 @@
+[package]
+name = "plotto-arb"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+num_enum = "0.7"
+once_cell = "1.18"
+rand = "0.8"
+plotto-utils = { path = "../utils" }
+
+[build-dependencies]
+plotto-utils = { path = "../utils" }
